@@ -70,6 +70,32 @@
 				};
 			};
 		};
+		
+		spi0: spi@1c05000 {
+			compatible = "allwinner,suniv-spi",
+				     "allwinner,sun8i-h3-spi";
+			reg = <0x01c05000 0x1000>;
+			interrupts = <10>;
+			clocks = <&ccu CLK_BUS_SPI0>, <&ccu CLK_BUS_SPI0>;
+			clock-names = "ahb", "mod";
+			resets = <&ccu RST_BUS_SPI0>;
+			status = "disabled";
+			#address-cells = <1>;
+			#size-cells = <0>;
+		};
+
+		spi1: spi@1c06000 {
+			compatible = "allwinner,suniv-spi",
+				     "allwinner,sun8i-h3-spi";
+			reg = <0x01c06000 0x1000>;
+			interrupts = <11>;
+			clocks = <&ccu CLK_BUS_SPI1>, <&ccu CLK_BUS_SPI1>;
+			clock-names = "ahb", "mod";
+			resets = <&ccu RST_BUS_SPI1>;
+			status = "disabled";
+			#address-cells = <1>;
+			#size-cells = <0>;
+		};
 
 		tcon0: lcd-controller@1c0c000 {
 			compatible = "allwinner,suniv-f1c100s-tcon";
@@ -134,6 +160,16 @@
 			#interrupt-cells = <3>;
 			#gpio-cells = <3>;
 
+			spi0_pc_pins: spi0-pc-pins {
+				pins = "PC0", "PC1", "PC2", "PC3";
+				function = "spi0";
+			};
+			
+			spi1_pa_pins: spi1-pa-pins {
+				pins = "PA2", "PA0", "PA3", "PA1";
+				function = "spi1";
+			};
+			
 			uart0_pe_pins: uart0-pe-pins {
 				pins = "PE0", "PE1";
 				function = "uart0";

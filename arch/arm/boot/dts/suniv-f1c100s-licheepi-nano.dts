@@ -74,6 +74,18 @@
 	status = "okay";
 };
 
+&spi0 {
+        pinctrl-names = "default";
+        pinctrl-0 = <&spi0_pc_pins>;
+        status = "okay";
+};
+
+&spi1 {
+        pinctrl-names = "default";
+        pinctrl-0 = <&spi1_pa_pins>;
+        status = "okay";
+};
+
 &uart0 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&uart0_pe_pins>;
@@ -90,6 +102,6 @@
 };
 
 &usbphy {
-	usb0_id_det-gpio = <&pio 4 2 GPIO_ACTIVE_HIGH>; /* PE2 */
+	usb0_id_det-gpio = <&pio 4 4 GPIO_ACTIVE_HIGH>; /* PE4 */
 	status = "okay";
 };
