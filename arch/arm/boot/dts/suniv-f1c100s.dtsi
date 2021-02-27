@@ -166,7 +166,7 @@
 			};
 			
 			spi1_pa_pins: spi1-pa-pins {
-				pins = "PA2", "PA0", "PA3", "PA1";
+				pins = "PA0", "PA1", "PA2", "PA3";
 				function = "spi1";
 			};
 			
@@ -221,7 +221,7 @@
 
 		wdt: watchdog@1c20ca0 {
 			compatible = "allwinner,suniv-f1c100s-wdt",
-				     "allwinner,sun4i-a10-wdt";
+				     "allwinner,sun6i-a31-wdt";
 			reg = <0x01c20ca0 0x20>;
 		};
 
@@ -235,7 +235,7 @@
 			resets = <&ccu RST_BUS_UART0>;
 			status = "disabled";
 		};
-
+		/*
 		uart1: serial@1c25400 {
 			compatible = "snps,dw-apb-uart";
 			reg = <0x01c25400 0x400>;
@@ -246,7 +246,7 @@
 			resets = <&ccu RST_BUS_UART1>;
 			status = "disabled";
 		};
-
+		*/
 		uart2: serial@1c25800 {
 			compatible = "snps,dw-apb-uart";
 			reg = <0x01c25800 0x400>;
